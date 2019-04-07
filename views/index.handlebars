@@ -1,0 +1,34 @@
+<div class="pgDl">
+<h1>What kind of smoothie would you like?</h1>
+
+{{!-- Create a smoothie --}}
+{{#each smoothies}}
+{{#unless this.devoured}}
+    <p>{{this.item_id}}</p>
+    <p>{{this.smoothie_name}}</p>
+    {{!-- Devour it button --}}
+    <form action="/" method="POST">
+    {{!-- if false (not devoured) --}}
+    
+    <button type="submit">Devour it!</button>
+    </form>
+{{/unless}}
+
+{{!-- if true (devoured) --}}
+    {{#if this.devoured}}
+    <p>{{this.item_id}}</p>
+    <p>{{this.smoothie_name}}</p>
+    <span>Happy Fun time, really you need to move the items over instead</span>
+    {{/if}}
+
+    
+{{/each}}
+
+
+
+<form action="/add" method="POST">
+    <label>Enter a smoothie</label>
+    <input type="text" name="smoothie_name">
+    <input type="submit">
+</form>
+</div>

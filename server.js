@@ -58,6 +58,16 @@ app.post("/add", function(req, res) {
     });
 });
 
+app.post("/devour", function(req, res) {
+    console.log("REQ BODY: ", req.body)
+    connection.query("UPDATE smoothies SET `devoured` = '1' WHERE (`item_id` = ?)", [req.body.item_id],
+    function(err, result) {
+        if (err) throw err;
+
+        res.redirect("/");
+    });
+});
+
 // TODO: add a devour it route to set devoured to 1 (true) for adding smoothie
 
 // =========================================================

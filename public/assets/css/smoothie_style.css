@@ -1,6 +1,56 @@
 body {
     background-image: url(../img/berries-blackberries-close-up-434295.jpg);
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: 75%;
+    background-position: center;
+    background-color: rgba(68, 19, 117, 0.37);
 }
 
+h1 {
+    font-family: 'Reenie Beanie', cursive;
+    font-size: 80px;
+    text-align: center;
+    background: rgba(68, 19, 117, 0.45);
+    margin-left: 200px;
+    margin-right: 200px;
+    border-radius: 25px;
+    color: rgba(117, 213, 213);
+    padding: 5px;
+    margin-top: 30px;
+}
+
+.smoothieName, smoothieID {
+    font-family: 'Reenie Beanie', cursive;
+    font-size: 25px;
+}
+
+.order {
+    border: solid purple;
+    padding: 10px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    color: white;
+    background: rgba(117, 213, 213, 0.45);
+}
+
+.EnterHere {
+    font-family: 'Reenie Beanie', cursive;
+    font-size: 45px;
+    
+}
+
+.enterForm {
+    text-align: center;
+    background: rgba(68, 19, 117, 0.45);
+    border-radius: 25px;
+    margin-left: 450px;
+    margin-right: 450px;
+    padding: 10px;
+    color: rgba(117, 213, 213);
+    margin-bottom: 30px;
+}
+
+.eaten {
+    text-align: right;
+ 
+}

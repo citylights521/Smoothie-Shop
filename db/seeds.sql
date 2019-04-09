@@ -1,4 +1,4 @@
--- write insert queries to populate the `burgers` table with at least three entries.
+-- inserts queries to populate the `smoothies` table with three entries.
 
 INSERT INTO smoothies (smoothie_name, devoured) VALUES ('Blueberry Kale', true);
 

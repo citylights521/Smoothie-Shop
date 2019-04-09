@@ -8,15 +8,30 @@ var connection = mysql.createConnection({
     user: process.env.DB_USER || "root",
     password: process.env.DB_PASS || "PassWord123",
     database: process.env.DB_DATABASE || "smoothieShop_db"
-  });
-  
-  connection.connect(function(err) {
-    if (err) {
-      console.error("error connecting: " + err.stack);
-      return;
-    }
-  
-    console.log("connected as id " + connection.threadId);
-  });
+});
 
-  module.exports = connection;
+connection.connect(function (err) {
+    if (err) {
+        console.error("error connecting: " + err.stack);
+        return;
+    }
+
+    console.log("connected as id " + connection.threadId);
+});
+
+function handleDisconnect(connection) {
+    connection.on('error', function(err) {
+        if (!err.fatal) {
+            return;
+        }
+        if (err.code !== 'PROTOCOL_CONNECTION_LOST') {
+            throw err;
+        }
+        console.log('Re-connecting lost connection: ' + err.stack);
+        newConn = mysql.createConnection(connection.config);
+        handleDisconnect(newConn);
+        newConn.connect();
+    });
+}
+
+module.exports = connection;

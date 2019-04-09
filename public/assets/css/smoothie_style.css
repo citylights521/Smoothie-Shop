@@ -6,11 +6,11 @@ body {
     background-color: rgba(68, 19, 117, 0.37);
 }
 
-h1 {
+.title {
     font-family: 'Reenie Beanie', cursive;
     font-size: 80px;
     text-align: center;
-    background: rgba(68, 19, 117, 0.45);
+    background: rgba(68, 19, 117, 0.55);
     margin-left: 200px;
     margin-right: 200px;
     border-radius: 25px;
@@ -21,7 +21,7 @@ h1 {
 
 .smoothieName, smoothieID {
     font-family: 'Reenie Beanie', cursive;
-    font-size: 25px;
+    font-size: 35px;
 }
 
 .order {
@@ -30,27 +30,24 @@ h1 {
     margin-left: 20px;
     margin-bottom: 20px;
     color: white;
-    background: rgba(117, 213, 213, 0.45);
+    background: rgba(117, 213, 213, 0.80);
+    margin-top: 20px;
 }
 
 .EnterHere {
     font-family: 'Reenie Beanie', cursive;
     font-size: 45px;
-    
 }
 
 .enterForm {
     text-align: center;
-    background: rgba(68, 19, 117, 0.45);
+    background: rgba(68, 19, 117, 0.55);
     border-radius: 25px;
-    margin-left: 450px;
-    margin-right: 450px;
     padding: 10px;
     color: rgba(117, 213, 213);
-    margin-bottom: 30px;
+    margin: 30px 450px;
 }
 
-.eaten {
+.orderEaten {
     text-align: right;
- 
 }

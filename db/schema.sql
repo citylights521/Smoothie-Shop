@@ -5,8 +5,8 @@ CREATE DATABASE smoothieShop_db;
 USE smoothieShop_db;
 
 CREATE TABLE smoothies (
-    item_id INTEGER(10) AUTO_INCREMENT,
+    item_id int NOT NULL AUTO_INCREMENT,
     smoothie_name VARCHAR(30) NOT NULL,
-    devoured boolean not null default 0,
+    devoured boolean not null default false,
     PRIMARY KEY(item_id)
 );

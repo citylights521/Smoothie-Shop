@@ -30,11 +30,14 @@ router.get("/*", goToIndex);
   //post route
   router.post("/add", function(req, res) {
     console.log("REQ BODY: ", req.body)
-    smoothie.create(["smoothie_name"], [req.body.smoothie_name], function(err, result) {
-        if (err) res.send(err);
 
-        res.redirect("/");
-    });
+   if (req.body.smoothie_name && req.body.smoothie_name != "") {
+        smoothie.create(["smoothie_name"], [req.body.smoothie_name], function(err, result) {
+            if (err) res.send(err);
+        });
+   }
+
+    res.redirect("/");
 });
 
 router.post("/devour", function(req, res) {

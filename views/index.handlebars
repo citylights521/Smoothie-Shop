@@ -1,42 +1,49 @@
 <div class="pgDl">
-<h1>What kind of smoothie would you like?</h1>
+    <h1 class="title">What kind of smoothie would you like?</h1>
 
-{{!-- Create a smoothie --}}
-<div class="container">
-{{#each smoothies}}
-{{#unless this.devoured}}
-    <div class="row">
-        <div class="col-md-4 order">
-    <span class="smoothieID">{{this.item_id}}.</span>
-    <span class="smoothieName">{{this.smoothie_name}}</span>
-    
-    {{!-- Devour it button --}}
-    <form action="/devour" method="POST">
-    {{!-- if false (not devoured) --}}
-    <button type="submit" name="item_id" value="{{this.item_id}}">Devour it!</button>
-    </form>
+    {{!-- Create a smoothie --}}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                {{#each smoothies}}
+                {{#unless this.devoured}}
+                <div class="order">
+                    <span class="smoothieID">{{this.item_id}}.</span>
+                    <span class="smoothieName">{{this.smoothie_name}}</span>
+
+                    {{!-- Devour it button --}}
+                    <form action="/devour" method="POST">
+                        {{!-- if false (not devoured) --}}
+                        <button type="submit" name="item_id" value="{{this.item_id}}">Devour it!</button>
+                    </form>
+                </div>
+                {{/unless}}
+                {{/each}}
+            </div>
+
+            <div class="col-md-4"></div>
+
+            <div class="col-md-4">
+                {{#each smoothies}}
+                {{!-- if true (devoured) --}}
+
+                {{#if this.devoured}}
+                <div class="order orderEaten">
+                    <span class="smoothieID">{{this.item_id}}.</span>
+                    <span class="smoothieName">{{this.smoothie_name}}</span>
+                </div>
+                {{/if}}
+
+                {{/each}}
+            </div>
+        </div>
     </div>
+
+    <div class="enterForm">
+        <form action="/add" method="POST">
+            <label class="EnterHere">Enter a smoothie: </label>
+            <input type="text" autocomplete="off" name="smoothie_name" maxlength="30">
+            <input type="submit">
+        </form>
     </div>
-{{/unless}}
-
-
-{{!-- if true (devoured) --}}
-
-    {{#if this.devoured}}
-    <div class="eaten">
-    <span class="smoothieID">{{this.item_id}}.</span>
-    <span class="smoothieName">{{this.smoothie_name}}</span>
-    </div>
-    {{/if}}
-    
-{{/each}}
-</div>
-
-<div class="enterForm">
-<form action="/add" method="POST">
-    <label class="EnterHere">Enter a smoothie: </label>
-    <input type="text" name="smoothie_name" maxlength="30">
-    <input type="submit">
-</form>
-</div>
 </div>

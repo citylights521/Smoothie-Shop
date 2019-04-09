@@ -74,7 +74,7 @@ var orm = {
       cb(err, result);
     });
   },
-  // An example of objColVals would be {name: panther, sleepy: true}
+  // TODO: Is this code (and much  of the code in this section) really needed?
   update: function(table, objColVals, condition, cb) {
     var queryString = "UPDATE " + table;
 

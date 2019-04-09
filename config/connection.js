@@ -34,4 +34,6 @@ function handleDisconnect(connection) {
     });
 }
 
+handleDisconnect(connection);
+
 module.exports = connection;

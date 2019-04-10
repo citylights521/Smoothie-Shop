@@ -2,13 +2,19 @@
 
 var mysql = require("mysql");
 
-var pool = mysql.createPool({
-    host: process.env.DB_SERVER || "localhost",
-    port: 3306,
-    user: process.env.DB_USER || "root",
-    password: process.env.DB_PASS || "PassWord123",
-    database: process.env.DB_DATABASE || "smoothieShop_db"
-});
+var pool;
+if (process.env.JAWSDB_URL) {
+    pool = mysql.createPool(process.env.JAWSDB_URL);
+}
+else {
+    pool = mysql.createPool({
+        host: "localhost",
+        port: 3306,
+        user: "root",
+        password: "PassWord123",
+        database: "smoothieShop_db"
+    });
+}
 
 var getConnectionQuery = function(queryString, callback) {
     pool.getConnection(function(err, connection) {

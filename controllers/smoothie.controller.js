@@ -1,14 +1,10 @@
-// import the following:
-
-// Express
-// burger.js
-// Create the router for the app, and export the router at the end of your file.
-
+//Imports Express
 var express = require("express");
 
+// Creates the router for the app
 var router = express.Router();
 
-// Import the model (cat.js) to use its database functions.
+// Imports the model (smoothie.js) to use its database functions.
 var smoothie = require("../models/smoothie.js");
 
 function goToIndex (req, res, next){
@@ -40,6 +36,7 @@ router.get("/*", goToIndex);
     res.redirect("/");
 });
 
+//devour route updates the item in the database to 'devoured'
 router.post("/devour", function(req, res) {
     console.log("REQ BODY: ", req.body)
     var condition = "item_id = " + req.body.item_id;
@@ -56,6 +53,6 @@ router.post("/devour", function(req, res) {
         });
 });
 
-// TODO: add a devour it route to set devoured to 1 (true) for adding smoothie
+
 // Export routes for server.js to use.
 module.exports = router;

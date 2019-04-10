@@ -37,6 +37,6 @@ https://smoothie-shop.herokuapp.com/
 ## Author
 Claire Gibeau
 
-##Feedback
+## Feedback
 Second full-stack project is in the books with this one. Adding MVC was a learning curve but in general I like the fact that information can be organized in a consistent way. Adding in the Jaws DB was new; I first started with Clear DB which had some quirks (auto-increments by 10 starting at the number 2...why?!). There is an article as the the actual why, but still, just why. I wish this app was a little more interactive/interesting on the front end but it was a back-end exercise and was valuable in understanding how the different pieces of the back-end come together to create the final result. 
 
